@@ -1,0 +1,22 @@
+{
+  "name": "practica-2",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Giampiero Specogna <giampi_12@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Giampierospec/integracion-open-source-practica-2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "^1.0.0",
+    "vue": "^2.5.22",
+    "axios": "^0.18.0"
+  }
+}
