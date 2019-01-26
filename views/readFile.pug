@@ -1,0 +1,21 @@
+extends layout
+block content
+    #app
+        .row
+            .col.s8.offset-s2
+                .card
+                    .card-content
+                        h3 Leer Archivo
+                        hr
+                        form(action="")
+                            .row
+                                .input-field.col.s12
+                                    label Subir archivo json
+                                    br
+                                    br
+                                    input(type="file" id="fl" accept=".json")
+                                .col-s12
+                                    button(type="button", @click="sendFile").waves-effect.waves-light.btn.blue.darken-4 Leer
+                                    
+block scripts
+    script(src="/js/readFile/readFile.js")

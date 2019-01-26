@@ -16,8 +16,17 @@ let ProcessJsonCtrl = (()=>{
         });
        
     });
+    let readJson = (req,res,next)=>{
+        ProcessJsonUtil.readJson(req.file.buffer.toString(),(err,obj)=>{
+            if(err)
+                return res.status(400).send(err);
+            else
+                return res.status(200).send(obj);
+        });
+    };
     return {
-        generateJson
+        generateJson,
+        readJson
     };
 })();
 

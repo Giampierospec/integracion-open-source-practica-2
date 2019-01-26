@@ -11,13 +11,13 @@ block content
             form(action="/")
               .row
                 .input-field.col.s6
-                  input(type="text", v-model="credito.tipoRegistro")
+                  input(type="text", v-model="credito.tipoRegistro",@keypress="restrictLength($event,1)")
                   label Tipo Registro
                 .input-field.col.s6
-                  input(type="text", v-model="credito.universidad")
+                  input(type="text", v-model="credito.universidad", @keypress="restrictLength($event,16)", readonly="true")
                   label Universidad
                 .input-field.col.s6
-                  input(type="number", v-model="credito.matricula", min="1")
+                  input(type="number", v-model="credito.matricula", min="1",@keypress="restrictLength($event,9)")
                   label Matricula
                 .input-field.col.s6
                   input(type="text", v-model="credito.nombre")
@@ -32,7 +32,7 @@ block content
                   input(type="number", v-model="credito.plazoPago")
                   label Plazo de Pago
                 .input-field.col.s6
-                  input(type="number", v-model="credito.cedulaGarante")
+                  input(type="number", v-model="credito.cedulaGarante" @keypress="restrictLength($event,11)")
                   label Cedula del Garante
                 .input-field.col.s6
                   input(type="number", v-model="credito.sueldoGarante")

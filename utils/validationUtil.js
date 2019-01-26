@@ -44,7 +44,7 @@ let ValidationUtil = (() => {
         let cedulaError = "";
             let isValidCedula = validateCedula(x.cedulaGarante);
             if (!isValidCedula)
-                cedulaError == `La cedula del garante ${x.cedulaGarante} no es válida \n`;
+                cedulaError = `La cedula del garante ${x.cedulaGarante} no es válida \n`;
         if (cedulaError)
             return callback(cedulaError);
         else
