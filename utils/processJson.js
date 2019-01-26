@@ -33,7 +33,7 @@ let ProcessJsonUtil = (()=>{
         let keys = Object.keys(obj);
         let pr = props.filter((x)=> keys.indexOf(x) === -1);
         if(pr.length)
-            callback(`Las siguientes propiedades no están presentes en el objeto ${pr.join('\n')}`);
+            callback(`Las siguientes propiedades no están presentes en el objeto: ${pr.join('\n')}`);
         else 
             callback(null,obj);
     };
