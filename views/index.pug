@@ -1,5 +1,48 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  #app
+    .row
+      .col.s8.offset-s2
+        .card
+          .card-content
+            h3.center-align Generación archivo JSON
+            hr
+            form(action="/")
+              .row
+                .input-field.col.s6
+                  input(type="text", v-model="credito.tipoRegistro")
+                  label Tipo Registro
+                .input-field.col.s6
+                  input(type="text", v-model="credito.universidad")
+                  label Universidad
+                .input-field.col.s6
+                  input(type="number", v-model="credito.matricula", min="1")
+                  label Matricula
+                .input-field.col.s6
+                  input(type="text", v-model="credito.nombre")
+                  label Nombre
+                .input-field.col.s6
+                  input(type="text", v-model="credito.carrera")
+                  label Carrera
+                .input-field.col.s6
+                  input(type="number", v-model="credito.montoFinanciar")
+                  label Monto A Financiar
+                .input-field.col.s6
+                  input(type="number", v-model="credito.plazoPago")
+                  label Plazo de Pago
+                .input-field.col.s6
+                  input(type="number", v-model="credito.cedulaGarante")
+                  label Cedula del Garante
+                .input-field.col.s6
+                  input(type="number", v-model="credito.sueldoGarante")
+                  label Sueldo del Garante
+                .col.s6.offset-s3
+                  button(type="button", @click="sendToApi").waves-effect.waves-light.btn.blue.darken-4 Generar
+
+                
+                
+                
+                
+block scripts
+  script(src="/js/createJson/crJson.js")
