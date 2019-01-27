@@ -16,7 +16,13 @@
                 }).then((obj)=>{
                     this.obj = obj.data;
                     console.log(obj);
-                }).catch((e)=> console.log(e.response));
+                }).catch((e)=> {
+                    swal({
+                        title:"Ocurrió un Error",
+                        text:e.response.data,
+                        icon:"error"
+                    });
+                });
             }
         }
     });

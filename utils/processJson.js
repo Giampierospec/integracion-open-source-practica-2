@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const {ProcessDbUtil} = require('./processDb');
 let props = ["tipoRegistro","universidad","matricula",
         "nombre","carrera","montoFinanciar","plazoPago","cedulaGarante","sueldoGarante"]
 let ProcessJsonUtil = (()=>{
@@ -35,7 +36,12 @@ let ProcessJsonUtil = (()=>{
         if(pr.length)
             callback(`Las siguientes propiedades no están presentes en el objeto: ${pr.join('\n')}`);
         else 
-            callback(null,obj);
+            ProcessDbUtil.saveObj(obj,(e,b)=>{
+                    if(e)
+                        callback("Ocurrió un Error al insertar en la BD");
+                    else
+                        callback(null,b);
+                })
     };
     return{
         genJson,

@@ -1,4 +1,6 @@
 var express = require('express');
+require('./config/config');
+require('./db/mongoose');
 // main directory global variable
 global.__maindir = __dirname;
 var path = require('path');

@@ -5,7 +5,7 @@ block content
             .col.s8.offset-s2
                 .card
                     .card-content
-                        h3 Leer Archivo
+                        h3.card-title Leer Archivo
                         hr
                         form(action="")
                             .row
@@ -16,6 +16,36 @@ block content
                                     input(type="file" id="fl" accept=".json")
                                 .col-s12
                                     button(type="button", @click="sendFile").waves-effect.waves-light.btn.blue.darken-4 Leer
+        .row(v-if="obj")
+            .col.s8.offset-s2
+                .card
+                    .card-content
+                        h3.card-title Información contenida en el archivo
+                        hr
+                        p 
+                            b Matricula:
+                            | &nbsp;{{obj.matricula}}
+                        p 
+                            b Nombre:
+                            | &nbsp;{{obj.nombre}}
+                        p 
+                            b Universidad:
+                            | &nbsp;{{obj.universidad}}
+                        p 
+                            b Carrera:
+                            | &nbsp;{{obj.carrera}}
+                        p 
+                            b Monto a Financiar:
+                            | &nbsp;{{obj.montoFinanciar}}
+                        p 
+                            b Plazo de Pago:
+                            | &nbsp;{{obj.plazoPago}}
+                        p 
+                            b Cédula del Garante:
+                            | &nbsp;{{obj.cedulaGarante}}
+                        p 
+                            b Sueldo del Garante:
+                            | &nbsp;{{obj.sueldoGarante}}
                                     
 block scripts
     script(src="/js/readFile/readFile.js")
